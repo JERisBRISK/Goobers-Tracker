@@ -1,5 +1,5 @@
 {
-  "name": "Goobers Tracker",
+  "name": "GoobersTracker",
   "version": "0.1.0",
   "description": "A bot to track GoobersNFT assets",
   "main": "index.js",
