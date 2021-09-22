@@ -26,7 +26,7 @@ function audit(s) {
     console.log(`AUDIT|${new Date().toUTCString()}: ${s.replace(/[\r\n]/g,' ')}`);
 }
 
-const AppName = "GoobersLeft"
+const AppName = "Goobers Tracker"
 const Version = "0.1.0";
 // #ifdef DEBUG
 const Flavor = "Debug";
@@ -64,7 +64,7 @@ function timeout(ms) {
 }
 
 function updateBotActivity(data) {
-    message = `${data.remaining} left: Total Supply: ${data.max} - Minted: ${data.total} - Reserved: ${data.reserved}`;
+    message = `${data.remaining} Left | Minted: ${data.total} | Reserved: ${data.reserved} | Total Supply: ${data.max}`;
     activityType = "WATCHING";
     audit(`Setting status to ${activityType} ${message}`);
     client.user.setActivity(message, { type: activityType});
