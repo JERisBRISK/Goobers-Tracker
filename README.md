@@ -1,5 +1,5 @@
 # GoobersLeftBot
-A Discord bot for telling how many Goobers are left
+A Discord bot for tracking the GoobersNFT assets.
 
 # Requires
 node.js
