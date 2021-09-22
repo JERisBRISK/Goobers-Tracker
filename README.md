@@ -1,4 +1,4 @@
-# GoobersLeftBot
+# Goobers Tracker
 A Discord bot for tracking the GoobersNFT assets.
 
 # Requires
