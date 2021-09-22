@@ -1,0 +1,31 @@
+{
+  "name": "GoobersLeft",
+  "version": "0.1.0",
+  "description": "A simple bot to tell your server how many GooberNFTs are left.",
+  "main": "index.js",
+  "scripts": {
+    "prestart": "preprocess app.js >app.release.js",
+    "start": "node app.release.js",
+    "predebug": "preprocess app.js -DEBUG=true >app.debug.js",
+    "debug": "node app.debug.js",
+    "dev": "nodemon app.debug.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JERisBRISK/GoobersLeftBot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JERisBRISK/GoobersLeftBot/issues"
+  },
+  "homepage": "https://github.com/JERisBRISK/GoobersLeftBot#readme",
+  "dependencies": {
+    "discord.js": "^12.5.3",
+    "dotenv": "^10.0.0",
+    "preprocessor": "^1.4.0",
+    "web3": "^1.5.2"
+  }
+}
