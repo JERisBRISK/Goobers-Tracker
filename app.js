@@ -72,23 +72,17 @@ function updateBotActivity(data) {
 
 async function getMaxSupply(contract)
 {
-    result = parseInt(await contract.methods.maxSupply().call());
-    audit('maxSupply: ' + result);
-    return result;
+    return parseInt(await contract.methods.maxSupply().call());
 }
 
 async function getTotalSupply(contract)
 {
-    result = parseInt(await contract.methods.totalSupply().call());
-    audit('totalSupply: ' + result);
-    return parseInt(result);
+    return parseInt(await contract.methods.totalSupply().call());
 }
 
 async function getReserved(contract)
 {
-    result = parseInt(await contract.methods.reservedCount().call());
-    audit('reservedCount: ' + result);
-    return parseInt(result);
+    return parseInt(await contract.methods.reservedCount().call());
 }
 
 async function getGooberData(contract)
@@ -97,25 +91,18 @@ async function getGooberData(contract)
     t = await getTotalSupply(contract);
     r = await getReserved(contract);
     data = new GooberData(m, t, r);
-    audit('There are ' + data.remaining + ' goobers left.');
+    audit(`getGooberData: Max: ${data.max}; Total: ${data.total}; Reserved: ${data.reserved}; Remaining: ${data.remaining}`);
     return data;
 }
 
 // event registrations
 client.once('ready', async () => {
-    audit("GoobersLeft is ready.");
-
-    data = await getGooberData(GooberContract),
-    updateBotActivity(data);
-    await timeout(RefreshTimeout);
+    audit(`${AppName} is ready.`);
 
     while(true) {
-        data = await Promise.all([
-            getGooberData(GooberContract),
-            timeout(RefreshTimeout)
-        ]);
-
+        data = await getGooberData(GooberContract);
         updateBotActivity(data);
+        await timeout(RefreshTimeout);
     }
 })
 
