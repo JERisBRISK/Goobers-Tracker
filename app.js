@@ -1,5 +1,6 @@
 /*
- * GoobersLeftBot by JERisBRISK
+ * Goobers Tracker
+ * a Discord bot by JERisBRISK
  * 
  * Features
  * - updates its status to show how many Goober NFTs minting details
